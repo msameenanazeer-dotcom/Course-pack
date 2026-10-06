@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* Header */
+
+header {
+    background: #173b6c;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+
+/* Navigation */
+
+nav {
+    background: #0e2a4d;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd54f;
+}
+
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    background: #1976d2;
+    border: none;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: #0d47a1;
+}
+
+
+/* Subjects */
+
+.subjects {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px 70px;
+}
+
+.subjects h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+}
+
+.subject-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 25px;
+}
+
+
+/* Subject Card */
+
+.subject-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-7px);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.subject-card h3 {
+    color: #173b6c;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.subject-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+/* Buttons */
+
+.view-btn,
+.download-btn {
+    display: block;
+    text-decoration: none;
+    padding: 11px;
+    margin: 9px 0;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.view-btn {
+    background: #1976d2;
+    color: white;
+}
+
+.view-btn:hover {
+    background: #0d47a1;
+}
+
+.download-btn {
+    background: #e8f1ff;
+    color: #1455a0;
+}
+
+.download-btn:hover {
+    background: #d2e5ff;
+}
+
+
+/* Footer */
+
+footer {
+    background: #0e2a4d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer h3 {
+    margin-bottom: 8px;
+}
