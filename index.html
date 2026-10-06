@@ -1,338 +1,509 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b6d">
 
-    <meta name="theme-color" content="#173b6c">
+<title>Ashoka Women's Engineering College - Course Pack</title>
 
-    <title>II CSE-AI Course Pack</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fa;
+    color: #222;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f3f6fa;
-            color: #222;
-        }
+/* HEADER */
+header {
+    background: #123b6d;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
 
-        /* Header */
-        header {
-            background: #173b6c;
-            color: white;
-            padding: 25px 15px;
-            text-align: center;
-        }
+header h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
 
-        header h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
+header h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
 
-        header p {
-            font-size: 15px;
-        }
+header p {
+    margin-top: 10px;
+    font-size: 14px;
+}
 
-        /* Welcome */
-        .welcome {
-            text-align: center;
-            padding: 30px 20px 20px;
-        }
+/* HOME */
+.home {
+    text-align: center;
+    padding: 35px 20px;
+}
 
-        .welcome h2 {
-            color: #173b6c;
-            margin-bottom: 10px;
-        }
+.home h2 {
+    color: #123b6d;
+    margin-bottom: 10px;
+}
 
-        .welcome p {
-            color: #666;
-        }
+.home p {
+    color: #666;
+    margin-bottom: 25px;
+}
 
-        /* Subject container */
-        .subjects {
-            max-width: 650px;
-            margin: auto;
-            padding: 15px;
-        }
+/* BRANCH BUTTONS */
+.branches {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        /* Subject card */
-        .subject-card {
-            background: white;
-            margin-bottom: 15px;
-            padding: 18px;
-            border-radius: 15px;
+.branch-btn {
+    border: none;
+    background: #123b6d;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-            display: flex;
-            align-items: center;
-            gap: 15px;
+.branch-btn:hover {
+    background: #0b294d;
+}
 
-            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
-        }
+/* COURSE PACK PAGE */
+#coursePack {
+    display: none;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .subject-icon {
-            width: 55px;
-            height: 55px;
+.course-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.course-title h2 {
+    color: #123b6d;
+    margin-bottom: 8px;
+}
 
-            background: #e8f1ff;
-            border-radius: 14px;
+.course-title p {
+    color: #666;
+}
 
-            font-size: 28px;
-            flex-shrink: 0;
-        }
+/* SUBJECT CARD */
+.subject-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+}
 
-        .subject-info {
-            flex: 1;
-        }
+.subject-card h3 {
+    color: #123b6d;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
 
-        .subject-info h3 {
-            color: #173b6c;
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
+.faculty {
+    color: #666;
+    margin-bottom: 15px;
+}
 
-        .subject-info p {
-            color: #777;
-            font-size: 14px;
-        }
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-        /* PDF button */
-        .pdf-button {
-            text-decoration: none;
-            background: #173b6c;
-            color: white;
+.view-btn,
+.download-btn {
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
 
-            padding: 12px 15px;
-            border-radius: 8px;
+.view-btn {
+    background: #123b6d;
+    color: white;
+}
 
-            font-size: 14px;
-            font-weight: bold;
+.download-btn {
+    background: #198754;
+    color: white;
+}
 
-            white-space: nowrap;
-        }
+.view-btn:hover {
+    background: #0b294d;
+}
 
-        .pdf-button:hover {
-            background: #0d2a50;
-        }
+.download-btn:hover {
+    background: #146c43;
+}
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #777;
-            font-size: 13px;
-        }
+/* BACK BUTTON */
+.back-btn {
+    display: block;
+    margin: 5px auto 25px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #777;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        /* Mobile */
-        @media (max-width: 500px) {
+/* OTHER BRANCH */
+.message {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+}
 
-            header h1 {
-                font-size: 24px;
-            }
+.message h2 {
+    color: #123b6d;
+    margin-bottom: 10px;
+}
 
-            .subject-card {
-                padding: 14px;
-            }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    color: #777;
+    font-size: 13px;
+}
 
-            .subject-info h3 {
-                font-size: 16px;
-            }
+/* MOBILE */
+@media (max-width: 500px) {
 
-            .pdf-button {
-                padding: 10px;
-                font-size: 12px;
-            }
+    header h1 {
+        font-size: 21px;
+    }
 
-            .subject-icon {
-                width: 48px;
-                height: 48px;
-                font-size: 24px;
-            }
-        }
-    </style>
+    header h2 {
+        font-size: 16px;
+    }
+
+    .branch-btn {
+        width: 85%;
+    }
+
+    .subject-card {
+        padding: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .view-btn,
+    .download-btn {
+        text-align: center;
+        width: 100%;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <h1>📚 II CSE-AI Course Pack</h1>
-    <p>Course Materials • 2026</p>
+
+    <h1>ASHOKA WOMEN'S ENGINEERING COLLEGE</h1>
+
+    <h2>KURNOOL</h2>
+
+    <p>Course Pack Portal</p>
+
 </header>
 
 
-<section class="welcome">
+<!-- HOME PAGE -->
+<section class="home" id="home">
 
-    <h2>Welcome 👋</h2>
+    <h2>Welcome to Course Pack Portal</h2>
 
-    <p>
-        Select your subject to view the Course Pack.
-    </p>
+    <p>Select your branch</p>
+
+    <div class="branches">
+
+        <button class="branch-btn" onclick="showBranch('CSE')">
+            CSE
+        </button>
+
+        <button class="branch-btn" onclick="showBranch('CSE-AI')">
+            CSE-AI
+        </button>
+
+        <button class="branch-btn" onclick="showBranch('ECE')">
+            ECE
+        </button>
+
+    </div>
 
 </section>
 
 
-<section class="subjects">
+<!-- CSE-AI COURSE PACK -->
+<section id="coursePack">
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back to Branches
+    </button>
+
+    <div class="course-title">
+
+        <h2>II CSE-AI COURSE PACK</h2>
+
+        <p>Select a subject to view or download the Course Pack</p>
+
+    </div>
 
 
     <!-- OOPJ -->
-
     <div class="subject-card">
 
-        <div class="subject-icon">
-            💻
+        <h3>💻 OOPJ</h3>
+
+        <p class="faculty">
+            Faculty: Ramakrishna
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="view-btn"
+                href="https://drive.google.com/file/d/1MxYdoeSHt0AxohvAGdR2CsZHh4oAI-fy/view?usp=sharing"
+                target="_blank">
+                👁️ View PDF
+            </a>
+
+            <a
+                class="download-btn"
+                href="https://drive.google.com/uc?export=download&id=1MxYdoeSHt0AxohvAGdR2CsZHh4oAI-fy"
+                target="_blank">
+                ⬇️ Download PDF
+            </a>
+
         </div>
-
-        <div class="subject-info">
-
-            <h3>OOPJ</h3>
-
-            <p>Faculty: Ramakrishna</p>
-
-        </div>
-
-        <a
-            class="pdf-button"
-            href="https://drive.google.com/file/d/1MxYdoeSHt0AxohvAGdR2CsZHh4oAI-fy/view?usp=sharing"
-            target="_blank">
-
-            📄 View PDF
-
-        </a>
 
     </div>
 
 
     <!-- AI -->
-
     <div class="subject-card">
 
-        <div class="subject-icon">
-            🤖
+        <h3>🤖 Artificial Intelligence</h3>
+
+        <p class="faculty">
+            Faculty: Sameena
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="view-btn"
+                href="https://drive.google.com/file/d/1vpv836Ezx4rGFGlJAvyOOFyaGTmvkiC0/view?usp=sharing"
+                target="_blank">
+                👁️ View PDF
+            </a>
+
+            <a
+                class="download-btn"
+                href="https://drive.google.com/uc?export=download&id=1vpv836Ezx4rGFGlJAvyOOFyaGTmvkiC0"
+                target="_blank">
+                ⬇️ Download PDF
+            </a>
+
         </div>
-
-        <div class="subject-info">
-
-            <h3>Artificial Intelligence</h3>
-
-            <p>Faculty: Sameena</p>
-
-        </div>
-
-        <a
-            class="pdf-button"
-            href="https://drive.google.com/file/d/1vpv836Ezx4rGFGlJAvyOOFyaGTmvkiC0/view?usp=sharing"
-            target="_blank">
-
-            📄 View PDF
-
-        </a>
 
     </div>
 
 
     <!-- UHV -->
-
     <div class="subject-card">
 
-        <div class="subject-icon">
-            🌱
+        <h3>🌱 UHV</h3>
+
+        <p class="faculty">
+            Faculty: Nithya
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="view-btn"
+                href="https://drive.google.com/file/d/1QK_4bJ5HuVL0ijsIIoR16MKuUqLgxKG4/view?usp=sharing"
+                target="_blank">
+                👁️ View PDF
+            </a>
+
+            <a
+                class="download-btn"
+                href="https://drive.google.com/uc?export=download&id=1QK_4bJ5HuVL0ijsIIoR16MKuUqLgxKG4"
+                target="_blank">
+                ⬇️ Download PDF
+            </a>
+
         </div>
-
-        <div class="subject-info">
-
-            <h3>UHV</h3>
-
-            <p>Faculty: Nithya</p>
-
-        </div>
-
-        <a
-            class="pdf-button"
-            href="https://drive.google.com/file/d/1QK_4bJ5HuVL0ijsIIoR16MKuUqLgxKG4/view?usp=sharing"
-            target="_blank">
-
-            📄 View PDF
-
-        </a>
 
     </div>
 
 
     <!-- ADSA -->
-
     <div class="subject-card">
 
-        <div class="subject-icon">
-            📊
+        <h3>📊 ADSA</h3>
+
+        <p class="faculty">
+            Faculty: K Swetha
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="view-btn"
+                href="https://drive.google.com/file/d/1sIOuNphRntzta6NivmpTAPiiDPoNRNtG/view?usp=sharing"
+                target="_blank">
+                👁️ View PDF
+            </a>
+
+            <a
+                class="download-btn"
+                href="https://drive.google.com/uc?export=download&id=1sIOuNphRntzta6NivmpTAPiiDPoNRNtG"
+                target="_blank">
+                ⬇️ Download PDF
+            </a>
+
         </div>
-
-        <div class="subject-info">
-
-            <h3>ADSA</h3>
-
-            <p>Faculty: K Swetha</p>
-
-        </div>
-
-        <a
-            class="pdf-button"
-            href="https://drive.google.com/file/d/1sIOuNphRntzta6NivmpTAPiiDPoNRNtG/view?usp=sharing"
-            target="_blank">
-
-            📄 View PDF
-
-        </a>
 
     </div>
 
 
     <!-- DMGT -->
-
     <div class="subject-card">
 
-        <div class="subject-icon">
-            🔢
+        <h3>🔢 DMGT</h3>
+
+        <p class="faculty">
+            Faculty: Savitha
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="view-btn"
+                href="https://drive.google.com/file/d/1GXPXcEoH4XcgFm9eeoutFa50agIURYC6/view?usp=sharing"
+                target="_blank">
+                👁️ View PDF
+            </a>
+
+            <a
+                class="download-btn"
+                href="https://drive.google.com/uc?export=download&id=1GXPXcEoH4XcgFm9eeoutFa50agIURYC6"
+                target="_blank">
+                ⬇️ Download PDF
+            </a>
+
         </div>
-
-        <div class="subject-info">
-
-            <h3>DMGT</h3>
-
-            <p>Faculty: Savitha</p>
-
-        </div>
-
-        <a
-            class="pdf-button"
-            href="https://drive.google.com/file/d/1GXPXcEoH4XcgFm9eeoutFa50agIURYC6/view?usp=sharing"
-            target="_blank">
-
-            📄 View PDF
-
-        </a>
 
     </div>
 
+</section>
+
+
+<!-- CSE / ECE MESSAGE -->
+<section class="message" id="otherBranch">
+
+    <h2 id="branchTitle"></h2>
+
+    <p>
+        Course packs for this branch will be added soon.
+    </p>
+
+    <br>
+
+    <button class="back-btn" onclick="goHome()">
+        ← Back to Branches
+    </button>
 
 </section>
 
 
 <footer>
 
-    <p>II CSE-AI • Course Pack Portal © 2026</p>
+    <p>
+        Ashoka Women's Engineering College, Kurnool
+    </p>
+
+    <p>
+        © 2026 Course Pack Portal
+    </p>
 
 </footer>
 
 
+<script>
+
+function showBranch(branch) {
+
+    document.getElementById("home").style.display = "none";
+
+    if (branch === "CSE-AI") {
+
+        document.getElementById("coursePack").style.display = "block";
+
+        document.getElementById("otherBranch").style.display = "none";
+
+    }
+
+    else {
+
+        document.getElementById("coursePack").style.display = "none";
+
+        document.getElementById("otherBranch").style.display = "block";
+
+        document.getElementById("branchTitle").innerText =
+            branch + " Course Packs";
+
+    }
+
+}
+
+
+function goHome() {
+
+    document.getElementById("home").style.display = "block";
+
+    document.getElementById("coursePack").style.display = "none";
+
+    document.getElementById("otherBranch").style.display = "none";
+
+}
+
+</script>
+
 </body>
 </html>
 
+        
